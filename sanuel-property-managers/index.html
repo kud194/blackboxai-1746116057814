@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sanuel Property Managers - Landlord Rent Tracking</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <header class="bg-white shadow p-4 flex items-center space-x-4">
+    <div class="text-3xl text-blue-600 font-bold flex items-center space-x-2">
+      <i class="fas fa-building"></i>
+      <span>Sanuel Property Managers</span>
+    </div>
+  </header>
+
+  <main class="flex-grow flex items-center justify-center p-6">
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+      <h1 class="text-2xl font-semibold mb-6 text-center">Landlord Login</h1>
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label for="plotName" class="block text-gray-700 font-medium mb-1">Plot Name</label>
+          <input type="text" id="plotName" name="plotName" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label for="password" class="block text-gray-700 font-medium mb-1">Password</label>
+          <input type="password" id="password" name="password" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition">Login</button>
+      </form>
+    </div>
+  </main>
+
+  <section class="bg-white shadow rounded-lg max-w-4xl mx-auto p-8 my-8">
+    <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">About Sanuel Property Managers</h2>
+    <p class="text-gray-700 mb-6 text-center max-w-3xl mx-auto">
+      Sanuel Property Managers is dedicated to providing landlords with an efficient and reliable platform to manage their rental properties, tenants, and payments seamlessly.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-blue-500">Our Motto</h3>
+        <p class="text-gray-600 italic">"Managing Properties, Simplifying Lives"</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-blue-500">Our Vision</h3>
+        <p class="text-gray-600 italic">To be the leading property management platform that empowers landlords with innovative tools and exceptional service.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2 text-blue-500">Our Mission</h3>
+        <p class="text-gray-600 italic">Delivering seamless rent tracking and tenant management solutions that save time and increase profitability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white shadow rounded-lg max-w-4xl mx-auto p-8 my-8">
+    <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Document Management</h2>
+    <form id="documentUploadForm" class="max-w-md mx-auto mb-6 space-y-4" enctype="multipart/form-data">
+      <div>
+        <label for="documentFile" class="block text-gray-700 font-medium mb-1">Upload Document</label>
+        <input type="file" id="documentFile" name="documentFile" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <button type="submit" class="w-full bg-purple-600 text-white font-semibold py-2 rounded hover:bg-purple-700 transition">Upload</button>
+    </form>
+    <div id="documentsList" class="max-w-4xl mx-auto overflow-y-auto max-h-64 border border-gray-300 rounded p-4">
+      <ul id="documentsContainer" class="list-disc list-inside text-gray-700">
+        <!-- Documents will be listed here -->
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-white shadow rounded-lg max-w-4xl mx-auto p-8 my-8">
+    <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Family Members</h2>
+    <form id="familyMemberForm" class="max-w-md mx-auto mb-6 space-y-4">
+      <div>
+        <label for="familyMemberName" class="block text-gray-700 font-medium mb-1">Name</label>
+        <input type="text" id="familyMemberName" name="familyMemberName" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div>
+        <label for="familyMemberPhone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
+        <input type="text" id="familyMemberPhone" name="familyMemberPhone" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div>
+        <label for="familyMemberEmail" class="block text-gray-700 font-medium mb-1">Email</label>
+        <input type="email" id="familyMemberEmail" name="familyMemberEmail" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <button type="submit" class="w-full bg-green-600 text-white font-semibold py-2 rounded hover:bg-green-700 transition">Add Family Member</button>
+    </form>
+    <div id="familyMembersList" class="max-w-md mx-auto space-y-4"></div>
+  </section>
+
+  <section class="bg-white shadow rounded-lg max-w-4xl mx-auto p-8 my-8">
+    <h2 class="text-3xl font-bold mb-4 text-center text-blue-600">Transaction History</h2>
+    <div id="transactionHistory" class="max-w-4xl mx-auto overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-200 rounded">
+        <thead>
+          <tr class="bg-blue-600 text-white">
+            <th class="py-2 px-4 border-b border-gray-200">Date</th>
+            <th class="py-2 px-4 border-b border-gray-200">Family Member</th>
+            <th class="py-2 px-4 border-b border-gray-200">Type</th>
+            <th class="py-2 px-4 border-b border-gray-200">Amount</th>
+            <th class="py-2 px-4 border-b border-gray-200">Description</th>
+          </tr>
+        </thead>
+        <tbody id="transactionTableBody" class="text-gray-700"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <script src="../app.js"></script>
+
+  <footer class="bg-white shadow p-4 text-center text-gray-500 text-sm">
+    &copy; 2024 Sanuel Property Managers. All rights reserved.
+  </footer>
+</body>
+</html>
